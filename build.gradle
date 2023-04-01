@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'com.badlogic.gdx.sqlite.android'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api files('/libs/android-4.2.jar')
+    api files('/libs/gdx-backend-android.jar')
+    api project(':gdx-sqlite')
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
