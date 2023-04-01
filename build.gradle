@@ -10,7 +10,7 @@ repositories {
 
 dependencies {
   implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-  implementation files('libs/android-4.2.jar')
-  api project(':common-gdx-api-sqlite')
+  compileOnly files('libs/android-4.2.jar') // just to compile the codes and not use in runtime
+  implementation project(':common-gdx-api-sqlite')
   implementation 'org.ow2.asm:asm-tree:9.4'
 }
