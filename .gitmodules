@@ -1,0 +1,3 @@
+[submodule "common-gdx-api-sqlite"]
+	path = common-gdx-api-sqlite
+	url = https://github.com/joonthansyle/common-gdx-api-sqlite.git

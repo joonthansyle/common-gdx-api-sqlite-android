@@ -7,10 +7,19 @@ group = 'com.badlogic.gdx.sqlite.android'
 repositories {
   mavenCentral()
 }
+ext{
+  asmTree='9.5'
+}
 
 dependencies {
-  implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+  implementation "org.ow2.asm:asm-tree:$asmTree"
+
+  compileOnly project(":common-gdx-api-sqlite")
+  compileOnly files('libs/gdx.jar') // just to compile the codes and not use in runtime
   compileOnly files('libs/android-4.2.jar') // just to compile the codes and not use in runtime
-  implementation project(':common-gdx-api-sqlite')
-  implementation 'org.ow2.asm:asm-tree:9.4'
+  compileOnly files('libs/gdx-backend-android.jar') // just to compile the codes and not use in runtime
+
+//  if requires latest backend-android version
+//  implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+
 }
