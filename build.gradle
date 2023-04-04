@@ -8,18 +8,20 @@ repositories {
   mavenCentral()
 }
 ext{
+// remove if used in the project
   asmTree='9.5'
 }
 
 dependencies {
   implementation "org.ow2.asm:asm-tree:$asmTree"
+  implementation project(":common-gdx-api-sqlite")
 
-  compileOnly project(":common-gdx-api-sqlite")
+// remove 3 lines below if used in the project
   compileOnly files('libs/gdx.jar') // just to compile the codes and not use in runtime
   compileOnly files('libs/android-4.2.jar') // just to compile the codes and not use in runtime
   compileOnly files('libs/gdx-backend-android.jar') // just to compile the codes and not use in runtime
 
-//  if requires latest backend-android version
+// un-remark to use this in the project
 //  implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
 
 }
